@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    span::before {
+            content: "Android Developers";
+            animation: animate infinite 3s;
+            padding-left: 10px;
+        }
+    
+        @keyframes animate {
+      
+            0% {
+                content: "Android Developers";
+                color:rgb(128, 0, 53);
+            }
+      
+            50% {
+                content: "NodeJs Developers";
+                color:rgb(128, 0, 53);
+            }
+      
+            75% {
+                content: "Python Developers";
+                color:rgb(128, 0, 53);
+            }
+            80% {
+                content: "Java Developers";
+                color:rgb(128, 0, 53);
+            }
+        }
+    
+  
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: bodoni mt;
+      padding: 10px;
+      background-image: url('./bg.webp');
+      background-color: black;    
+      color:white;
+    }
+    
+    /* Header/Blog Title */
+    .header {
+      padding: 30px;
+      text-align: center;
+      background-image: url('./bg1.webp');
+      background-color: black; 
+    }
+    
+    .header h1 {
+      font-size: 50px;
+    }
+    
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+    }
+    
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(177, 34, 75);
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+    
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+      background-color: rgb(0, 0, 0);
+      padding: 20px;
+      margin-top: 20px;
+      color: white;
+    }
+    .card1 {
+      background-color: rgb(0, 0, 0);
+      padding: 20px;
+      margin-top: 20px;
+      align-self: center;
+      color:white
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+    * {
+        box-sizing: border-box;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type=password], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      .registerbtn {
+        background-color: #000000d2;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0
+      }
+      .container {
+        border-radius: 5px;
+        background-image: url('./bg1.webp');
+      background-color: black; 
+        padding: 20px;
+      }
+      
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+     
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="header">
+      <h1>Skill And Job Recommender</h1>
+      <h1>Inspiring <span> </span>Jobs for the future !</h1>
+    </div>
+    <div class="topnav">
+      <a href="home.html"><i class="fa fa-home" style="font-size:24px"></i><pre>Home</pre></a>
+      <a href="login.html"><i class="fa fa-sign-in" style="font-size:24px"></i><pre>Login</pre></a>
+      <a href="register.html"><i class="fa fa-registered" style="font-size:24px"></i><pre>Register</pre></a>
+      <a href="home.html"><i class="fa fa-eye" style="font-size:24px"></i><pre>About Us</pre></a>
+      <a href="job.html"><i class="fa fa-graduation-cap" style="font-size:24px"></i><pre>Job Chooser</pre></a>
+      <a href="#" style="float:right"><i class="fa fa-sign-out" style="font-size:24px"></i><pre>Sign Out</pre></a>
+    </div>
+<div class="container">
+    <form action="/action_page.php">
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Email </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Email Id">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Password</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+        <label for="lname">Choose Your skill</label></div>
+        <div class="col-75">
+  <input type="checkbox" id="java" name="java">
+  <label for="java">Java</label><br>
+  <input type="checkbox" id="C++" name="C++">
+  <label for="C++">C++</label><br>
+  <input type="checkbox" id="Python" name="Python" >
+  <label for="Python">Python</label><br>
+  <input type="checkbox" id="DevOps" name="DevOps">
+  <label for="Python">DevOps</label><br>
+  <input type="checkbox" id="NodeJs" name="NodeJs">
+  <label for="Python">Node Js</label><br>
+  <input type="checkbox" id="ML" name="ML">
+  <label for="Python">Machine Learning</label><br>
+  <input type="checkbox" id="Civil" name="Civil">
+  <label for="Python">Structural analysis</label><br>
+  <input type="checkbox" id="Robotics" name="Robotics">
+  <label for="Python">Robotics</label><br>
+  <input type="checkbox" id="Full_Stack" name="Full_Stack">
+  <label for="Python">Full Stack</label><br>
+  <input type="checkbox" id="PHP" name="PHP">
+  <label for="Python">PHP</label><br>
+  <input type="checkbox" id="UiUx" name="UiUx">
+  <label for="Python">UI/UX</label><br>
+  <input type="checkbox" id="Automation" name="Automation">
+  <label for="Python">Automation</label><br>
+  <br></div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Mention Your Skills If Any</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Skills Here......." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="registerbtn">
+     <button>Submit</button>
+      </div>
+    </form>
+  </div>
+  </body>
+  </html>

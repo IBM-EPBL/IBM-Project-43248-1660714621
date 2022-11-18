@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+    span::before {
+            content: "Android Developers";
+            animation: animate infinite 3s;
+            padding-left: 10px;
+        }
+      
+        @keyframes animate {
+      
+            0% {
+                content: "Android Developers";
+                color:rgb(26, 205, 255);
+            }
+      
+            50% {
+                content: "NodeJs Developers";
+                color:rgb(2, 179, 255);
+            }
+      
+            75% {
+                content: "Python Developers";
+                color:rgb(0, 204, 255);
+            }
+            80% {
+                content: "Java Developers";
+                color:rgb(0, 179, 255);
+            }
+        }
+    
+  
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: bodoni mt;
+      padding: 10px;
+      background-image: url('./bg1.webp');
+      background-color: black;    
+    }
+    
+    /* Header/Blog Title */
+    .header {
+      padding: 30px;
+      text-align: center;
+      background:linear-gradient(to left,rgb(152, 152, 174),rgb(208, 121, 121),rgb(157, 157, 183),rgb(170, 148, 170),rgb(159, 98, 224)),rgb(255, 255, 255),rgb(85, 168, 113);
+
+    }
+    
+    .header h1 {
+      font-size: 50px;
+    }
+    
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+    }
+    
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(162, 71, 241);
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+    
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .card1 {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+      align-self: center;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+    
+      .row > .column {
+        padding: 0 8px;
+      }
+      
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .column {
+        float: left;
+        width: 25%;
+      }
+      
+      /* The Modal (background) */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+      }
+      
+      /* The Close Button */
+      .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .mySlides {
+        display: none;
+      }
+      
+      .cursor {
+        cursor: pointer;
+      }
+      
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      
+      img {
+        margin-bottom: -4px;
+      }
+      
+      .caption-container {
+        text-align: center;
+        background-color: black;
+        padding: 2px 16px;
+        color: white;
+      }
+      
+      .demo {
+        opacity: 0.6;
+      }
+      
+      .active,
+      .demo:hover {
+        opacity: 1;
+      }
+      
+      img.hover-shadow {
+        transition: 0.3s;
+      }
+      
+      .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    .row > .column {
+        padding: 0 8px;
+      }
+      
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .column {
+        float: left;
+        width: 25%;
+      }
+      .overlay {
+        position: absolute; 
+        bottom: 0; 
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); /* Black see-through */
+        color: #f1f1f1; 
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .container:hover .overlay {
+        opacity: 1;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+      }
+      
+      .container img {
+        width: 100%;
+        height: auto;
+      }
+      .container .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .container .btn:hover {
+        background:linear-gradient(to left,rgb(255, 255, 255),rgb(94, 147, 221),rgb(37, 99, 224),rgb(13, 182, 255),blue)
+        ;color: white;
+      }
+    </style>
+    </head>
+    <body>
+    
+    <div class="header">
+      <h1>Skill And Job Recommender</h1>
+      <h1>Inspiring <span> </span>Jobs for the future !</h1>
+    </div>
+    
+    <div class="topnav">
+      <a href="home.html"><i class="fa fa-home" style="font-size:24px"></i><pre>Home</pre></a>
+      <a href="login.html"><i class="fa fa-sign-in" style="font-size:24px"></i><pre>Login</pre></a>
+      <a href="register.html"><i class="fa fa-registered" style="font-size:24px"></i><pre>Register</pre></a>
+      <a href="home.html"><i class="fa fa-eye" style="font-size:24px"></i><pre>About Us</pre></a>
+      <a href="job.html"><i class="fa fa-graduation-cap" style="font-size:24px"></i><pre>Job Chooser</pre></a>
+      <a href="#" style="float:right"><i class="fa fa-sign-out" style="font-size:24px"></i><pre>Sign Out</pre></a>
+    </div>
+
+    <h2 style="text-align:center">Available Jobs</h2>
+
+    <div class="row">
+      <div class="column">
+        <div class="container">
+        <img src="./Data_Scientist.jpg" style="width:100%" class="hover-shadow cursor">
+        <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+        <b><p style="text-align:center;color:#f1f1f1">Data Scientist</p></b>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+        <img src="./Angular_Developer.png" style="width:100%" class="hover-shadow cursor">
+        <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+        <b><p style="text-align:center;color:#f1f1f1">Angular Developer</p></b>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+        <img src="./Node_Js_Developer.jpg" style="width:100%" class="hover-shadow cursor">
+        <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+        <b><p style="text-align:center;color:#f1f1f1">Node Js Developer</p></b>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container">
+        <img src="./Python_Developer.jpg" style="width:100%" class="hover-shadow cursor">
+        <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+        <b><p style="text-align:center;color:#f1f1f1">Python Developer</p></b>
+    </div>
+    
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="container">
+          <img src="./Civil_Engineer.jpg"  class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">Civil Engineer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./Java_Developer.jpg" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">Java Developer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./Robotics_Engineer.jpg" style="width:100%" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">Robotics Engineer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./Android_Developer.jpg" style="width:100%" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">Android Developer</p></b>
+      </div>
+      
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+          <div class="container">
+          <img src="./Ui_Ux.jpg"  class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">UI UX Developer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./Full_Stack_Developer.png" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">Full Stack Developer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./DevOps_Engineer.jpg" style="width:100%" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">DevOps Engineer</p></b>
+          </div>
+        </div>
+        <div class="column">
+          <div class="container">
+          <img src="./Php_Developer.jpg" style="width:100%" class="hover-shadow cursor">
+          <a href="./apply.html"><button class="btn" style="font-family:bodoni mt;"><b>Apply Now</b></button></a>
+          <b><p style="text-align:center;color:#f1f1f1">PHP Developer</p></b>
+      </div>
+      
+        </div>
+  </body>
+  </html>
