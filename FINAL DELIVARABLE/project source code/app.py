@@ -124,7 +124,7 @@ def apply():
         app.config['MAIL_USE_TLS'] = True
         app.config['MAIL_USERNAME'] = 'apikey'
         app.config['MAIL_PASSWORD'] = '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'
-        app.config['MAIL_DEFAULT_SENDER'] = 'jasperkirubakaranjit2019@citchennai.net'
+        app.config['MAIL_DEFAULT_SENDER'] = 'https://roeverengg.edu.in'
         mail = Mail(app)
         recipient = request.form['email']
         msg = Message('Successfully Applied',
